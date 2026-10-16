@@ -16,7 +16,8 @@ import meshMzar from './mesh-mzar.json';
 import mirrasets from './mirrasets.json';
 import mobius from './mobius.json';
 import moneygramMgusd from './moneygram-mgusd.json';
-import nafuloo from './nafuloo.json';
+import nafulool from './nafuloo.json';
+import valtorum from './valtorum.json';
 
 const RAW: unknown[] = [
   gratz,
@@ -27,6 +28,7 @@ const RAW: unknown[] = [
   mobius,
   moneygramMgusd,
   nafuloo,
+  valtorum,
 ];
 
 export const LISTED_ANCHORS: readonly ListedAnchor[] = parseListedAnchors(RAW);
