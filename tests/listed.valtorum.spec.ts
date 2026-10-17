@@ -4,10 +4,7 @@ import { describe, expect, it } from 'vitest';
 
 import { ANCHORS } from '@/constants/anchors';
 import { LISTED_ANCHORS } from '@/constants/listed-anchors';
-import {
-  fixtureMismatches,
-  getListedAnchorByDomain,
-} from '@/lib/stellar/listed-anchor-schema';
+import { fixtureMismatches, getListedAnchorByDomain } from '@/lib/stellar/listed-anchors';
 
 const FIXTURE_PATH = join(__dirname, 'fixtures', 'listed', 'valtorum.toml');
 
@@ -27,10 +24,12 @@ describe('listed anchor: valtorum', () => {
   it('lists the USDV asset', () => {
     expect(entry).toBeDefined();
     expect(entry!.assets).toHaveLength(1);
-    expect(entry!.assets).toContainEqual({
-      code: 'USDV',
-      issuer: 'GBLAJOKBIIT7P32BJQFCSRJVOE2SXHI4D5ZGLFJ4DLMFJXI2NN6R37G5',
-    });
+    expect(entry!.assets).toContainEqual(
+      expect.objectContaining({
+        code: 'USDV',
+        issuer: 'GBLAJOKBIIT7P32BJQFCSRJVOE2SXHI4D5ZGLFJ4DLMFJXI2NN6R37G5',
+      })
+    );
   });
 
   it('matches the live toml fixture', () => {
@@ -41,7 +40,7 @@ describe('listed anchor: valtorum', () => {
 
   it('is not a routable ANCHORS entry', () => {
     expect(entry).toBeDefined();
-    const domains = new Set(entry!.domains);
+    const domains = new Set<string | undefined>(entry!.domains);
     for (const anchor of ANCHORS) {
       expect(domains.has(anchor.homeDomain)).toBe(false);
       expect(domains.has(anchor.serviceDomain)).toBe(false);

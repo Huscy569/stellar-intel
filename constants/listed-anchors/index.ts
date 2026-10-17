@@ -16,7 +16,7 @@ import meshMzar from './mesh-mzar.json';
 import mirrasets from './mirrasets.json';
 import mobius from './mobius.json';
 import moneygramMgusd from './moneygram-mgusd.json';
-import nafulool from './nafuloo.json';
+import nafuloo from './nafuloo.json';
 import valtorum from './valtorum.json';
 
 const RAW: unknown[] = [
