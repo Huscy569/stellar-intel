@@ -1,0 +1,18 @@
+{
+  "default_branch": "main",
+  "branches": [
+    "feat/issue-1619-anchors-list-valtorum-as-an-issuer-only-operator",
+    "main",
+    "origin"
+  ],
+  "parent": {
+    "feat/issue-1619-anchors-list-valtorum-as-an-issuer-only-operator": "main",
+    "main": null,
+    "origin": "main"
+  },
+  "order": [
+    "main",
+    "feat/issue-1619-anchors-list-valtorum-as-an-issuer-only-operator",
+    "origin"
+  ]
+}
